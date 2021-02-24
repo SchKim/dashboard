@@ -1,0 +1,1 @@
+// export const BACKGROUND = "http://www.baltana.com/files/wallpapers-16/Digital-Art-Background-HD-Wallpapers-41706.jpg"
