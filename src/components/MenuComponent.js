@@ -1,15 +1,30 @@
+import React from "react";
+import styled from "styled-components";
 
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+const Menu = styled.div`
+height:99px;
+position: absolute;
+bottom: 0;
+left:0;
+right:0;
 
-const element = <FontAwesomeIcon icon={faCoffee} />
+ul{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    background: #f97970;
+    padding: 15px 0;
+    place-items: center center;
+}
 
-
+li{
+list-style-type:none;
+}
+`;
 
 export default function MenuComponent(){
     return (
-        
+        <Menu>
       <nav>
           <ul>
               <li>  
@@ -36,6 +51,6 @@ export default function MenuComponent(){
           </ul>
           
       </nav>
-      
+      </Menu>
     )
 }
