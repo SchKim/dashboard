@@ -2,6 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 import KarakterComponent from './KarakterComponent';
+import KnowledgeComponent from './KnowledgeComponent';
+import AchievementsComponent from './AchievementsComponent';
+import QuestsComponent from './QuestsComponent';
+import HistoryComponent from './HistoryComponent';
 
 const Menu = styled.nav`
   height: 90px;
@@ -89,28 +93,33 @@ export default function MenuComponent() {
             </Link>
           </li>
           <li>
-            <Link to='/karaktercomponent'>
+            <Link to='/knowledgecomponent'>
                <i className='fa fa-graduation-cap'></i>
             </Link>
           </li>
           <li>
-            <Link to='/karaktercomponent'>
+            <Link to='/achievementscomponent'>
                <i className='fa fa-trophy'></i>
             </Link>
           </li>
           <li>
-            <Link to='/karaktercomponent'>
+            <Link to='/questscomponent'>
                <i className='fa fa-question'></i>
             </Link>
           </li>
           <li className='menu__last-item'>
-            <Link to='/karaktercomponent'>
+            <Link to='/historycomponent'>
                <i className='fa fa-history'></i>
             </Link>
           </li>
         </ul>
       </Menu>
       <Route path='/karaktercomponent' component={KarakterComponent} />
+
+      <Route path='/knowledgecomponent' component={KnowledgeComponent} />
+      <Route path='/achievementscomponent' component={AchievementsComponent} />
+      <Route path='/questscomponent' component={QuestsComponent} />
+      <Route path='/historycomponent' component={HistoryComponent} />
     </Router>
   );
 }
