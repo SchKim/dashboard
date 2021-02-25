@@ -8,6 +8,8 @@ const KarakterWrapper = styled.div`
   padding: 30px;
   margin: 30px 0 0 0;
   max-width: 1000px;
+  width: 80%;
+  margin: 0 10%;
 `;
 
 const KarakterContent = styled.div`

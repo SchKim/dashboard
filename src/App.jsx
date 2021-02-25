@@ -4,21 +4,24 @@ import backgroundImg from './shared/assets/backgroundImg.jpg';
 
 import MenuComponent from './components/MenuComponent';
 
-const BackgroundImg = styled.img`
+const BackgroundImg = styled.div`
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  /* background: url('http://www.baltana.com/files/wallpapers-16/Digital-Art-Background-HD-Wallpapers-41706.jpg') */
-  /* center / cover no-repeat; */
+  background: center / cover no-repeat;
   z-index: -1;
+  height: calc(auto - 90px);
 `;
 
 function App() {
   return (
     <div className='App'>
-      <BackgroundImg src={backgroundImg}></BackgroundImg>
+      <BackgroundImg
+        style={{ backgroundImage: `url(${backgroundImg})` }}
+      ></BackgroundImg>
+
       <MenuComponent />
     </div>
   );
