@@ -4,10 +4,7 @@ import MenuComponent from './components/MenuComponent';
 function App() {
   return (
     <div className='App'>
-      <header className='App-header'>
-        {/* /* <img src={logo} className="App-logo" alt="logo" /> */}
-        boe
-      </header>
+      <header className='App-header'>boe</header>
       <MenuComponent />
     </div>
   );
