@@ -3,170 +3,6 @@ import styled from 'styled-components';
 import karakter_img from '../shared/assets/pic_nicolet.jpg';
 import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
 
-const Menu = styled.nav`
-  height: 90px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-
-  ul {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    background: #f97970;
-    padding: 15px 0;
-    place-items: center center;
-  }
-
-  li {
-    list-style-type: none;
-  }
-  /* li::content::first-letter {
-    color: #f97970;
-    font-size: 30px;
-  } */
-  li:hover::after {
-    content: 'Karakter';
-    position: absolute;
-    top: -125px;
-    left: 7%;
-    padding: 10px;
-    border-radius: 50px;
-    font: oblique small-caps bold 30px/21px Georgia, serif;
-    background: #fff;
-  }
-  li:nth-child(2):hover::after {
-    content: 'Knowledge Book';
-    top: -125px;
-    left: 27%;
-  }
-  li:nth-child(3):hover::after {
-    content: 'Achievements';
-    top: -125px;
-    left: 47%;
-  }
-  li:nth-child(4):hover::after {
-    content: 'Quests';
-    top: -125px;
-    left: 67%;
-  }
-  li:nth-child(5):hover::after {
-    content: 'History';
-    top: -125px;
-    left: 87%;
-  }
-
-  li:first-child {
-    border-bottom: 5px solid #02132c;
-  }
-
-  .menu__lastitem {
-    grid-column-end: -1;
-  }
-  li a > i {
-    font-size: 45px;
-    color: #fbefd7;
-    width: 100%;
-  }
-  li a > i:hover {
-    color: #02132c;
-  }
-
-  li a:focus > i {
-    color: #02132c;
-  }
-`;
-
-// kakrkater
-
-const KarakterWrapper = styled.div`
-  background: #fff;
-  border-radius: 50px;
-  padding: 30px;
-  margin: 30px 0 0 0;
-  max-width: 1000px;
-  width: 80%;
-  margin: 0 10%;
-`;
-
-const KarakterContent = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
-`;
-
-const ImgWrapper = styled.div`
-  img {
-    width: 100%;
-  }
-`;
-
-const ContentText = styled.div`
-  min-width: 350px;
-  margin: 30% 0 0 10%;
-
-  p > span {
-    text-transform: uppercase;
-    font: 26px/ 35px bold;
-    display: block;
-  }
-  p > span::first-letter {
-    color: #f97970;
-    font-size: 35px;
-  }
-`;
-
-const KarakterTable = styled.div`
-  margin: 30px 0 0 0;
-  display: flex;
-`;
-
-const Table = styled.div`
-  display: grid;
-  grid-template-columns: 250px 1fr;
-  background: #f97970;
-  color: #02132c;
-  text-transform: uppercase;
-  padding: 5% 8%;
-  height: 20vh;
-  width: 70vw;
-
-  .table__row {
-    grid-row: 1;
-  }
-  .table__column {
-    grid-column: 2;
-    grid-row: 1;
-  }
-
-  .row__items {
-    display: grid;
-    grid-template-rows: repeat(11, 25px);
-    margin: 5px 0;
-  }
-
-  .column__items {
-    display: grid;
-    grid-template-columns: repeat(9, 1fr);
-  }
-
-  [class*='bar'] {
-    border-radius: 50px;
-    background-color: #fff;
-    margin: 5px 0;
-    text-align: end;
-  }
-  .bar1 {
-    grid-column: 1 /9;
-  }
-  .bar2 {
-    grid-column: 1;
-  }
-  .bar3 {
-    grid-column: 1/ 5;
-  }
-`;
-
 export default function MenuComponent() {
   return (
     <Router>
@@ -290,3 +126,193 @@ function Questscomponent() {
 function Historycomponent() {
   return <h2>HistoryComponent</h2>;
 }
+
+const Menu = styled.nav`
+  height: 90px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  ul {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    background: #f97970;
+    padding: 15px 0;
+    place-items: center center;
+  }
+
+  li {
+    list-style-type: none;
+  }
+
+  li:hover::after {
+    position: absolute;
+    top: -125px;
+    left: 7%;
+    padding: 10px;
+    border-radius: 50px;
+    font: oblique small-caps bold 30px/21px Georgia, serif;
+    background: #fff;
+  }
+  li:nth-child(2):hover::after {
+    content: 'Karakter';
+    top: -75px;
+    left: 5%;
+  }
+  li:nth-child(3):hover::after {
+    content: 'Knowledge Book';
+    top: -75px;
+    left: 25%;
+  }
+  li:nth-child(4):hover::after {
+    content: 'Achievements';
+    top: -75px;
+    left: 45%;
+  }
+  li:nth-child(5):hover::after {
+    content: 'Quests';
+    top: -75px;
+    left: 65%;
+  }
+  li:nth-child(6):hover::after {
+    content: 'History';
+    top: -75px;
+    left: 85%;
+
+    @media only screen and (max-width: 900px) {
+      left: 81%;
+    }
+    @media only screen and (max-width: 600px) {
+      left: 73%;
+    }
+  }
+
+  .menu__lastitem {
+    grid-column-end: -1;
+  }
+  li a > i {
+    font-size: 45px;
+    color: #fbefd7;
+    width: 100%;
+  }
+  li a > i:hover {
+    color: #02132c;
+  }
+
+  li a:focus > i {
+    color: #02132c;
+  }
+`;
+
+// kakrkater
+
+const KarakterWrapper = styled.div`
+  background: #fff;
+  border-radius: 50px;
+  padding: 30px;
+  margin: 30px 0 0 0;
+  max-width: 1000px;
+  width: 50%;
+  margin: 0 10%;
+  @media only screen and (max-width: 900px) {
+    width: 70%;
+  }
+`;
+
+const KarakterContent = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+`;
+
+const ImgWrapper = styled.div`
+  img {
+    width: 100%;
+  }
+  @media only screen and (max-width: 1100px) {
+    visibility: hidden;
+  }
+`;
+
+const ContentText = styled.div`
+  min-width: 350px;
+  margin: 10% 0 0 10%;
+
+  p > span {
+    text-transform: uppercase;
+    font: 26px/ 35px bold;
+    display: block;
+  }
+  p > span::first-letter {
+    color: #f97970;
+    font-size: 35px;
+  }
+  @media only screen and (max-width: 900px) {
+    p > span {
+      font-size: 20px;
+    }
+  }
+`;
+
+const KarakterTable = styled.div`
+  margin: 30px 0 0 0;
+  display: flex;
+`;
+
+const Table = styled.div`
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  background: #f97970;
+  color: #02132c;
+  text-transform: uppercase;
+  padding: 5% 8%;
+  height: 30vh;
+  width: 60vw;
+
+  .table__row {
+    grid-row: 1;
+  }
+  .table__column {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .row__items {
+    display: grid;
+    grid-template-rows: repeat(11, 25px);
+    margin: 5px 0;
+  }
+
+  .column__items {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+  }
+
+  [class*='bar'] {
+    border-radius: 50px;
+    background-color: #fff;
+    margin: 5px 0;
+    text-align: end;
+    font-size: 10px;
+    line-height: 17px;
+    padding-right: 2px;
+  }
+  .bar1 {
+    grid-column: 1 /9;
+  }
+  .bar2 {
+    grid-column: 1;
+  }
+  .bar3 {
+    grid-column: 1/ 5;
+  }
+
+  @media only screen and (max-width: 1100px) {
+    grid-template-columns: 50px 1fr;
+    font-size: small;
+  }
+  @media only screen and (max-width: 700px) {
+    font-size: 8px;
+  }
+`;

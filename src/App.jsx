@@ -1,4 +1,3 @@
-import './App.css';
 import styled from 'styled-components';
 import backgroundImg from './shared/assets/backgroundImg.jpg';
 
