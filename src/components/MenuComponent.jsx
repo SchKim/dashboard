@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
 import KarakterComponent from './KarakterComponent';
 import KnowledgeComponent from './KnowledgeComponent';
 import AchievementsComponent from './AchievementsComponent';
@@ -86,6 +86,9 @@ export default function MenuComponent() {
     <Router>
       <Menu>
         <ul>
+          <li style={{ display: 'none' }}>
+             <Link to='/'></Link>
+          </li>
           <li>
              
             <Link to='/karaktercomponent'>
@@ -114,12 +117,20 @@ export default function MenuComponent() {
           </li>
         </ul>
       </Menu>
-      <Route path='/karaktercomponent' component={KarakterComponent} />
+      <Switch>
+        <Route path='/karaktercomponent'>
+          <Karaktercomponent />;
+        </Route>
+      </Switch>
 
-      <Route path='/knowledgecomponent' component={KnowledgeComponent} />
+      {/* <Route path='/knowledgecomponent' component={KnowledgeComponent} />
       <Route path='/achievementscomponent' component={AchievementsComponent} />
       <Route path='/questscomponent' component={QuestsComponent} />
-      <Route path='/historycomponent' component={HistoryComponent} />
+      <Route path='/historycomponent' component={HistoryComponent} /> */}
     </Router>
   );
+}
+
+function Karaktercomponent() {
+  return <h2>yes</h2>;
 }
