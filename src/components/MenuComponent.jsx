@@ -121,16 +121,37 @@ export default function MenuComponent() {
         <Route path='/karaktercomponent'>
           <Karaktercomponent />;
         </Route>
-      </Switch>
 
-      {/* <Route path='/knowledgecomponent' component={KnowledgeComponent} />
-      <Route path='/achievementscomponent' component={AchievementsComponent} />
-      <Route path='/questscomponent' component={QuestsComponent} />
-      <Route path='/historycomponent' component={HistoryComponent} /> */}
+        <Route path='/knowledgecomponent'>
+          <Knowledgecomponent />;
+        </Route>
+        <Route path='/achievementscomponent'>
+          <Achievementscomponent />
+        </Route>
+        <Route path='/questscomponent'>
+          <Questscomponent />
+        </Route>
+        <Route path='/historycomponent'>
+          <Historycomponent />
+        </Route>
+      </Switch>
     </Router>
   );
 }
 
 function Karaktercomponent() {
   return <h2>yes</h2>;
+}
+
+function Knowledgecomponent() {
+  return <h2>KnowledgeComponent</h2>;
+}
+function Achievementscomponent() {
+  return <h2>AchievementsComponent</h2>;
+}
+function Questscomponent() {
+  return <h2>QuestsComponent</h2>;
+}
+function Historycomponent() {
+  return <h2>HistoryComponent</h2>;
 }
