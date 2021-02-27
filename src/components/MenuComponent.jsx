@@ -1,11 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
-import KarakterComponent from './KarakterComponent';
-import KnowledgeComponent from './KnowledgeComponent';
-import AchievementsComponent from './AchievementsComponent';
-import QuestsComponent from './QuestsComponent';
-import HistoryComponent from './HistoryComponent';
 
 const Menu = styled.nav`
   height: 90px;
