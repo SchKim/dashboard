@@ -1,28 +1,26 @@
-import styled from 'styled-components';
-import backgroundImg from './shared/assets/backgroundImg.jpg';
+import styled from "styled-components";
+import backgroundImg from "./shared/assets/backgroundImg.jpg";
 
-import MenuComponent from './components/MenuComponent';
+import MenuComponent from "./components/MenuComponent";
 
-const BackgroundImg = styled.div`
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: center / cover no-repeat;
-  z-index: -1;
-  height: calc(auto - 90px);
+const ContentWrapper = styled.div`
+  display: grid;
+  grid-template-rows: 1fr 90px;
+`;
+
+const Cover = styled.img`
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 `;
 
 function App() {
   return (
-    <div className='App'>
-      <BackgroundImg
-        style={{ backgroundImage: `url(${backgroundImg})` }}
-      ></BackgroundImg>
+    <ContentWrapper>
+      <Cover src={backgroundImg}></Cover>
 
       <MenuComponent />
-    </div>
+    </ContentWrapper>
   );
 }
 

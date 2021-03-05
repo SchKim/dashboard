@@ -1,143 +1,140 @@
-import React from 'react';
-import styled from 'styled-components';
-import karakter_img from '../shared/assets/pic_nicolet.jpg';
-import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
+import React from "react";
+import styled from "styled-components";
+import karakter_img from "../shared/assets/pic_nicolet.jpg";
+import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
 
 export default function MenuComponent() {
   return (
     <Router>
       <Menu>
         <ul>
-          <li style={{ display: 'none' }}>
-             <Link to='/'></Link>
+          <li style={{ display: "none" }}>
+             <Link to="/"></Link>
           </li>
           <li>
              
-            <Link to='/karaktercomponent'>
-              <i className='fa fa-female'> </i>
+            <Link to="/karaktercomponent">
+              <i className="fa fa-female"> </i>
             </Link>
           </li>
           <li>
-            <Link to='/knowledgecomponent'>
-               <i className='fa fa-graduation-cap'></i>
+            <Link to="/knowledgecomponent">
+               <i className="fa fa-graduation-cap"></i>
             </Link>
           </li>
           <li>
-            <Link to='/achievementscomponent'>
-               <i className='fa fa-trophy'></i>
+            <Link to="/achievementscomponent">
+               <i className="fa fa-trophy"></i>
             </Link>
           </li>
           <li>
-            <Link to='/questscomponent'>
-               <i className='fa fa-question'></i>
+            <Link to="/questscomponent">
+               <i className="fa fa-question"></i>
             </Link>
           </li>
-          <li className='menu__last-item'>
-            <Link to='/historycomponent'>
-               <i className='fa fa-history'></i>
+          <li className="menu__last-item">
+            <Link to="/historycomponent">
+               <i className="fa fa-history"></i>
             </Link>
           </li>
         </ul>
       </Menu>
       <Switch>
-        <Route path='/karaktercomponent'>
+        {/* <Route path="/karaktercomponent">
           <Karaktercomponent />;
         </Route>
 
-        <Route path='/knowledgecomponent'>
+        <Route path="/knowledgecomponent">
           <Knowledgecomponent />;
         </Route>
-        <Route path='/achievementscomponent'>
+        <Route path="/achievementscomponent">
           <Achievementscomponent />
         </Route>
-        <Route path='/questscomponent'>
+        <Route path="/questscomponent">
           <Questscomponent />
         </Route>
-        <Route path='/historycomponent'>
+        <Route path="/historycomponent">
           <Historycomponent />
-        </Route>
+        </Route> */}
       </Switch>
     </Router>
   );
 }
 
-function Karaktercomponent() {
-  return (
-    <KarakterWrapper>
-      <KarakterContent>
-        <ImgWrapper>
-          <img src={karakter_img} alt='foto_kim' />
-        </ImgWrapper>
+// function Karaktercomponent() {
+//   return (
+//     <KarakterWrapper>
+//       <KarakterContent>
+//         <ImgWrapper>
+//           <img src={karakter_img} alt="foto_kim" />
+//         </ImgWrapper>
 
-        <ContentText>
-          <p>
-            <span>Kim Schenk</span>
-            <span>Frontend Developer</span>
-            <span>FIOD</span>
-          </p>
-        </ContentText>
-      </KarakterContent>
+//         <ContentText>
+//           <p>
+//             <span>Kim Schenk</span>
+//             <span>Frontend Developer</span>
+//             <span>FIOD</span>
+//           </p>
+//         </ContentText>
+//       </KarakterContent>
 
-      <KarakterTable>
-        <Table>
-          <div className='table__row'>
-            <div className='row__items'>
-              <div>skills</div>
-              <div>kim</div>
-              <div>html</div>
-              <div>css</div>
-              <div>javascript</div>
-              <div>typeschript</div>
-            </div>
-          </div>
+//       <KarakterTable>
+//         <Table>
+//           <div className="table__row">
+//             <div className="row__items">
+//               <div>skills</div>
+//               <div>kim</div>
+//               <div>html</div>
+//               <div>css</div>
+//               <div>javascript</div>
+//               <div>typeschript</div>
+//             </div>
+//           </div>
 
-          <div className='table__column'>
-            <div className='column__items'>
-              <div>0%</div>
-              <div>25%</div>
-              <div>50%</div>
-              <div>75%</div>
-              <div>100%</div>
-              <div>125%</div>
-              <div>150%</div>
-              <div>175%</div>
-              <div>200%</div>
+//           <div className="table__column">
+//             <div className="column__items">
+//               <div>0%</div>
+//               <div>25%</div>
+//               <div>50%</div>
+//               <div>75%</div>
+//               <div>100%</div>
+//               <div>125%</div>
+//               <div>150%</div>
+//               <div>175%</div>
+//               <div>200%</div>
 
-              <div className='bar1'>200%</div>
-              <div className='bar2'>25%</div>
-              <div className='bar3'>100%</div>
-            </div>
-          </div>
-        </Table>
-      </KarakterTable>
-    </KarakterWrapper>
-  );
-}
+//               <div className="bar1">200%</div>
+//               <div className="bar2">25%</div>
+//               <div className="bar3">100%</div>
+//             </div>
+//           </div>
+//         </Table>
+//       </KarakterTable>
+//     </KarakterWrapper>
+//   );
+// }
 
-function Knowledgecomponent() {
-  return <h2>KnowledgeComponent</h2>;
-}
-function Achievementscomponent() {
-  return <h2>AchievementsComponent</h2>;
-}
-function Questscomponent() {
-  return <h2>QuestsComponent</h2>;
-}
-function Historycomponent() {
-  return <h2>HistoryComponent</h2>;
-}
+// function Knowledgecomponent() {
+//   return <h2>KnowledgeComponent</h2>;
+// }
+// function Achievementscomponent() {
+//   return <h2>AchievementsComponent</h2>;
+// }
+// function Questscomponent() {
+//   return <h2>QuestsComponent</h2>;
+// }
+// function Historycomponent() {
+//   return <h2>HistoryComponent</h2>;
+// }
 
 const Menu = styled.nav`
   height: 90px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  background: #f97970;
 
   ul {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    background: #f97970;
+
     padding: 15px 0;
     place-items: center center;
   }
@@ -156,27 +153,27 @@ const Menu = styled.nav`
     background: #fff;
   }
   li:nth-child(2):hover::after {
-    content: 'Karakter';
+    content: "Karakter";
     top: -75px;
     left: 5%;
   }
   li:nth-child(3):hover::after {
-    content: 'Knowledge Book';
+    content: "Knowledge Book";
     top: -75px;
     left: 25%;
   }
   li:nth-child(4):hover::after {
-    content: 'Achievements';
+    content: "Achievements";
     top: -75px;
     left: 45%;
   }
   li:nth-child(5):hover::after {
-    content: 'Quests';
+    content: "Quests";
     top: -75px;
     left: 65%;
   }
   li:nth-child(6):hover::after {
-    content: 'History';
+    content: "History";
     top: -75px;
     left: 85%;
 
@@ -289,7 +286,7 @@ const Table = styled.div`
     grid-template-columns: repeat(9, 1fr);
   }
 
-  [class*='bar'] {
+  [class*="bar"] {
     border-radius: 50px;
     background-color: #fff;
     margin: 5px 0;
