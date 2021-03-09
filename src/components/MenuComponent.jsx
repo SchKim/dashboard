@@ -18,27 +18,32 @@ export default function MenuComponent() {
           <li>
             <Link to="/karakter">
               <i className="fa fa-female"></i>
+              <Tooltip>Karakter</Tooltip>
             </Link>
           </li>
           <li>
             <Link to="/knowledge">
                <i className="fa fa-graduation-cap"></i>
+              <Tooltip>Knowledge Book</Tooltip>
             </Link>
           </li>
           <li>
             <Link to="/achievement">
                <i className="fa fa-trophy"></i>
+              <Tooltip>Achievements</Tooltip>
             </Link>
           </li>
           <li>
             <Link to="/quests">
                <i className="fa fa-question"></i>
+              <Tooltip>Quests</Tooltip>
             </Link>
           </li>
           <li className="menu__last-item">
             <Link to="/history">
               {/* a relatif aan zn parent maken  */} 
               <i className="fa fa-history"></i>
+              <Tooltip>History</Tooltip>
             </Link>
           </li>
         </ul>
@@ -53,7 +58,6 @@ export default function MenuComponent() {
 }
 
 const Menu = styled.nav`
-  /* height: 90px; */
   background: #f97970;
   position: absolute;
     left:0;
@@ -63,16 +67,16 @@ const Menu = styled.nav`
   ul {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    /* padding: 15px 0; */
     place-items: center center;
-   
+    padding-inline-start: 0px;
+    line-height:20px
   }
 
   li {
     list-style-type: none;
-    /* text-align:center;
-    margin-bottom:5px */
+    
   }
+ 
 
   /* li:hover::after {
     position: absolute;
@@ -135,3 +139,5 @@ const Menu = styled.nav`
 
  
 `;
+
+const Tooltip = styled.div``;
