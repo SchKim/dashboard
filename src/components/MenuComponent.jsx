@@ -41,7 +41,6 @@ export default function MenuComponent() {
           </li>
           <li className="menu__last-item">
             <Link to="/history">
-              {/* a relatif aan zn parent maken  */} 
               <i className="fa fa-history"></i>
               <Tooltip>History</Tooltip>
             </Link>
@@ -67,35 +66,30 @@ const Menu = styled.nav`
   ul {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    place-items: center center;
+    place-items: end center;
     padding-inline-start: 0px;
+    position: relative;
   }
-
   li {
     list-style-type: none;
   }
-
   ul li a {
     color: #f97970;
     font-size: 24px;
-    position: relative;
   }
-  /* top en lest weg werken met relastive aan parent  */
-
-  /* op de hover display no  */
 
   li a > i {
     font-size: 45px;
-    line-height: 45px;
+
     color: #fbefd7;
     width: 100%;
+    max-height: 100%;
   }
   li a:focus > i,
   ul li a:hover i,
   ul li i:hover {
     color: #02132c;
   }
-
   .menu__lastitem {
     grid-column-end: -1;
   }
@@ -105,10 +99,8 @@ const Menu = styled.nav`
 `;
 const Tooltip = styled.div`
   position: absolute;
-  top: -80px;
-  left: -20px;
+  bottom: 100%;
   background: #fff;
-  width: 100%px;
   padding: 10px;
   border-radius: 50px;
   text-transform: uppercase;
@@ -116,4 +108,5 @@ const Tooltip = styled.div`
   letter-spacing: 3px;
   font-weight: bold;
   display: none;
+  transform: translate(-40%, -100%);
 `;
