@@ -2,6 +2,55 @@ import React from "react";
 import styled from "styled-components";
 import karakterImg from "../shared/assets/pic_nicolet.jpg";
 
+export default function Karaktercomponent() {
+  return (
+    <KarakterWrapper>
+      <KarakterHeader>
+        <KarakterAvatar>
+          <img src={karakterImg} alt="foto van Kim" />
+        </KarakterAvatar>
+        <KarakterHeadline>
+          <dl>
+            <KarakterDataTilte>Kim Schenk</KarakterDataTilte>
+            <KarakterDataData>Frontend Developer @FIOD</KarakterDataData>
+          </dl>
+        </KarakterHeadline>
+      </KarakterHeader>
+
+      <KarakterTable>
+        <Table>
+          <div className="table__row">
+            <div className="row__items">
+              <div>skills</div>
+              <div>kim</div>
+              <div>html</div>
+              <div>css</div>
+              <div>javascript</div>
+              <div>typescript</div>
+            </div>
+          </div>
+
+          <div className="table__column">
+            <div className="column__items">
+              <div>0%</div>
+              <div>25%</div>
+              <div>50%</div>
+              <div>75%</div>
+              <div>100%</div>
+              <div>125%</div>
+              <div>150%</div>
+              <div>175%</div>
+              <div>200%</div>
+              <Bar scoreBar="1/ 9; grid-row: 2;">200%</Bar>
+              <Bar scoreBar="1/ 3; grid-row: 3;">50%</Bar>
+            </div>
+          </div>
+        </Table>
+      </KarakterTable>
+    </KarakterWrapper>
+  );
+}
+
 const KarakterWrapper = styled.div`
   position: absolute;
   left: 40px;
@@ -94,15 +143,16 @@ const Table = styled.div`
   .row__items {
     display: grid;
     grid-template-rows: repeat(11, 25px);
-    margin: 5px 0;
+    margin: 6px 0 0 0;
   }
 
   .column__items {
     display: grid;
     grid-template-columns: repeat(9, 1fr);
+    margin: 5px 0;
   }
 
-  [class*="bar"] {
+  /* [class*="bar"] {
     border-radius: 50px;
     background-color: #fff;
     margin: 5px 0;
@@ -110,8 +160,8 @@ const Table = styled.div`
     font-size: 10px;
     line-height: 17px;
     padding-right: 2px;
-  }
-  .bar1 {
+  } */
+  /* .bar1 {
     grid-column: 1 /9;
   }
   .bar2 {
@@ -119,7 +169,7 @@ const Table = styled.div`
   }
   .bar3 {
     grid-column: 1/ 5;
-  }
+  } */
   /* bar componet voor lles  */
 
   @media only screen and (max-width: 1100px) {
@@ -133,54 +183,13 @@ const Table = styled.div`
     font-size: 8px;
   }
 `;
-
-export default function Karaktercomponent() {
-  return (
-    <KarakterWrapper>
-      <KarakterHeader>
-        <KarakterAvatar>
-          <img src={karakterImg} alt="foto van Kim" />
-        </KarakterAvatar>
-        <KarakterHeadline>
-          <dl>
-            <KarakterDataTilte>Kim Schenk</KarakterDataTilte>
-            <KarakterDataData>Frontend Developer @FIOD</KarakterDataData>
-          </dl>
-        </KarakterHeadline>
-      </KarakterHeader>
-
-      <KarakterTable>
-        <Table>
-          <div className="table__row">
-            <div className="row__items">
-              <div>skills</div>
-              <div>kim</div>
-              <div>html</div>
-              <div>css</div>
-              <div>javascript</div>
-              <div>typescript</div>
-            </div>
-          </div>
-
-          <div className="table__column">
-            <div className="column__items">
-              <div>0%</div>
-              <div>25%</div>
-              <div>50%</div>
-              <div>75%</div>
-              <div>100%</div>
-              <div>125%</div>
-              <div>150%</div>
-              <div>175%</div>
-              <div>200%</div>
-
-              <div className="bar1">200%</div>
-              <div className="bar2">25%</div>
-              <div className="bar3">100%</div>
-            </div>
-          </div>
-        </Table>
-      </KarakterTable>
-    </KarakterWrapper>
-  );
-}
+const Bar = styled.div`
+  border-radius: 50px;
+  background-color: #fff;
+  margin: 5px 0;
+  text-align: end;
+  font-size: 10px;
+  line-height: 17px;
+  padding-right: 2px;
+  grid-column: ${(props) => props.scoreBar || "0"};
+`;
