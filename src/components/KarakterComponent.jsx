@@ -130,7 +130,6 @@ const Table = styled.div`
   text-transform: uppercase;
   padding: 5% 8%;
   height: 30vh;
-  /* width: 60vw; */
 
   .table__row {
     grid-row: 1;
@@ -151,26 +150,6 @@ const Table = styled.div`
     grid-template-columns: repeat(9, 1fr);
     margin: 5px 0;
   }
-
-  /* [class*="bar"] {
-    border-radius: 50px;
-    background-color: #fff;
-    margin: 5px 0;
-    text-align: end;
-    font-size: 10px;
-    line-height: 17px;
-    padding-right: 2px;
-  } */
-  /* .bar1 {
-    grid-column: 1 /9;
-  }
-  .bar2 {
-    grid-column: 1;
-  }
-  .bar3 {
-    grid-column: 1/ 5;
-  } */
-  /* bar componet voor lles  */
 
   @media only screen and (max-width: 1100px) {
     grid-template-columns: 50px 1fr;
