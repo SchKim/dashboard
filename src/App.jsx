@@ -5,10 +5,10 @@ import MenuComponent from "./components/MenuComponent";
 
 const ContentWrapper = styled.div`
   display: grid;
-  grid-template-rows: 93vh 90px;
+  grid-template-rows: 100vh 90px;
 `;
 
-const Cover = styled.img`
+const CoverBackgroundImage = styled.img`
   object-fit: cover;
   width: 100%;
   height: 100%;
@@ -17,7 +17,7 @@ const Cover = styled.img`
 function App() {
   return (
     <ContentWrapper>
-      <Cover src={backgroundImg}></Cover>
+      <CoverBackgroundImage src={backgroundImg}></CoverBackgroundImage>
 
       <MenuComponent />
     </ContentWrapper>

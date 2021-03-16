@@ -1,6 +1,6 @@
 import React from "react";
 
-import KarakterComponent from "./KarakterComponent";
+import CharacterComponent from "./CharacterComponent";
 import KnowledgeComponent from "./KnowledgeComponent";
 import AchievementsComponent from "./AchievementsComponent";
 import QuestsComponent from "./QuestsComponent";
@@ -16,7 +16,7 @@ export default function MenuComponent() {
       <Menu>
         <ul>
           <li>
-            <Link to="/karakter">
+            <Link to="/character">
               <i className="fa fa-female"></i>
               <Tooltip>Karakter</Tooltip>
             </Link>
@@ -47,7 +47,7 @@ export default function MenuComponent() {
           </li>
         </ul>
       </Menu>
-      <Route path="/karakter" component={KarakterComponent} />
+      <Route path="/character" component={CharacterComponent} />
       <Route path="/knowledge" component={KnowledgeComponent} />
       <Route path="/achievement" component={AchievementsComponent} />
       <Route path="/quests" component={QuestsComponent} />
