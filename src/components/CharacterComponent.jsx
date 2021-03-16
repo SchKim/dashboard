@@ -1,55 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+
 import CharacterImg from "../shared/assets/fotoKim.jpeg";
-
-export default function Charactercomponent() {
-  return (
-    <CharacterWrapper>
-      <CharacterrHeader>
-        <CharacterAvatar>
-          <img src={CharacterImg} alt="foto van Kim" />
-        </CharacterAvatar>
-        <CharacterHeadline>
-          <dl>
-            <CharacterDataTitle>Kim Schenk</CharacterDataTitle>
-            <CharacterDataData>Frontend Developer @FIOD</CharacterDataData>
-          </dl>
-        </CharacterHeadline>
-      </CharacterrHeader>
-
-      <CharacterTable>
-        <Table>
-          <div className="table__row">
-            <div className="row__items">
-              <div>skills</div>
-              <div>kim</div>
-              <div>html</div>
-              <div>css</div>
-              <div>javascript</div>
-              <div>typescript</div>
-            </div>
-          </div>
-
-          <div className="table__column">
-            <div className="column__items">
-              <div>0%</div>
-              <div>25%</div>
-              <div>50%</div>
-              <div>75%</div>
-              <div>100%</div>
-              <div>125%</div>
-              <div>150%</div>
-              <div>175%</div>
-              <div>200%</div>
-              <Bar scoreBar="1/ 10; grid-row: 2;">200%</Bar>
-              <Bar scoreBar="1/ 3; grid-row: 3;">50%</Bar>
-            </div>
-          </div>
-        </Table>
-      </CharacterTable>
-    </CharacterWrapper>
-  );
-}
 
 const CharacterWrapper = styled.div`
   position: absolute;
@@ -173,3 +125,53 @@ const Bar = styled.div`
   padding-right: 2px;
   grid-column: ${(props) => props.scoreBar || "0"};
 `;
+
+export default function Charactercomponent() {
+  return (
+    <CharacterWrapper>
+      <CharacterrHeader>
+        <CharacterAvatar>
+          <img src={CharacterImg} alt="foto van Kim" />
+        </CharacterAvatar>
+        <CharacterHeadline>
+          <dl>
+            <CharacterDataTitle>Kim Schenk</CharacterDataTitle>
+            <CharacterDataData>Frontend Developer @FIOD</CharacterDataData>
+          </dl>
+        </CharacterHeadline>
+      </CharacterrHeader>
+
+      <CharacterTable>
+        <Table>
+          <div className="table__row">
+            <div className="row__items">
+              <div>skills</div>
+              <div>kim</div>
+              <div>html</div>
+              <div>css</div>
+              <div>javascript</div>
+              <div>typescript</div>
+            </div>
+          </div>
+
+          <div className="table__column">
+            <div className="column__items">
+              <div>0%</div>
+              <div>25%</div>
+              <div>50%</div>
+              <div>75%</div>
+              <div>100%</div>
+              <div>125%</div>
+              <div>150%</div>
+              <div>175%</div>
+              <div>200%</div>
+              <Bar scoreBar="1/ 10">200%</Bar>
+              <Bar scoreBar="1/ 1 ">50%</Bar>
+              <Bar scoreBar="1/1">test</Bar>
+            </div>
+          </div>
+        </Table>
+      </CharacterTable>
+    </CharacterWrapper>
+  );
+}

@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import backgroundImg from "./shared/assets/backgroundImg.jpg";
 
+import backgroundImg from "./shared/assets/backgroundImg.jpg";
 import MenuComponent from "./components/MenuComponent";
 
 const ContentWrapper = styled.div`

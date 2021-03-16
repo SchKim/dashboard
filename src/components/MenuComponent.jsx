@@ -1,4 +1,6 @@
 import React from "react";
+import styled from "styled-components";
+import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 
 import CharacterComponent from "./CharacterComponent";
 import KnowledgeComponent from "./KnowledgeComponent";
@@ -6,9 +8,61 @@ import AchievementsComponent from "./AchievementsComponent";
 import QuestsComponent from "./QuestsComponent";
 import HistoryComponent from "./HistoryComponent";
 
-import styled from "styled-components";
+const Menu = styled.nav`
+  background: #f97970;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
 
-import { BrowserRouter as Router, Link, Route } from "react-router-dom";
+  ul {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    place-items: end center;
+    padding-inline-start: 0px;
+    position: relative;
+  }
+  li {
+    list-style-type: none;
+  }
+  ul li a {
+    color: #f97970;
+    font-size: 24px;
+  }
+
+  li a > i {
+    font-size: 45px;
+
+    color: #fbefd7;
+    width: 100%;
+    max-height: 100%;
+  }
+  li a:focus > i,
+  ul li a:hover i,
+  ul li i:hover {
+    color: #02132c;
+  }
+  .menu__lastitem {
+    grid-column-end: -1;
+  }
+  ul li a:hover div {
+    display: block;
+  }
+`;
+const Tooltip = styled.div`
+  position: absolute;
+  bottom: 100%;
+  /* margin: 50%; */
+  background: #fff;
+  padding: 10px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 3px;
+  font-weight: bold;
+  display: none;
+  transform: translate(-40%, -100%);
+`;
 
 export default function MenuComponent() {
   return (
@@ -55,58 +109,3 @@ export default function MenuComponent() {
     </Router>
   );
 }
-
-const Menu = styled.nav`
-  background: #f97970;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  right: 0;
-
-  ul {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    place-items: end center;
-    padding-inline-start: 0px;
-    position: relative;
-  }
-  li {
-    list-style-type: none;
-  }
-  ul li a {
-    color: #f97970;
-    font-size: 24px;
-  }
-
-  li a > i {
-    font-size: 45px;
-
-    color: #fbefd7;
-    width: 100%;
-    max-height: 100%;
-  }
-  li a:focus > i,
-  ul li a:hover i,
-  ul li i:hover {
-    color: #02132c;
-  }
-  .menu__lastitem {
-    grid-column-end: -1;
-  }
-  ul li a:hover div {
-    display: block;
-  }
-`;
-const Tooltip = styled.div`
-  position: absolute;
-  bottom: 100%;
-  background: #fff;
-  padding: 10px;
-  border-radius: 50px;
-  text-transform: uppercase;
-  font-size: 10px;
-  letter-spacing: 3px;
-  font-weight: bold;
-  display: none;
-  transform: translate(-40%, -100%);
-`;
