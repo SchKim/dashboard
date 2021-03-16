@@ -11,7 +11,7 @@ export default function Charactercomponent() {
         </CharacterAvatar>
         <CharacterHeadline>
           <dl>
-            <CharacterDataTilte>Kim Schenk</CharacterDataTilte>
+            <CharacterDataTitle>Kim Schenk</CharacterDataTitle>
             <CharacterDataData>Frontend Developer @FIOD</CharacterDataData>
           </dl>
         </CharacterHeadline>
@@ -106,7 +106,7 @@ const CharacterHeadline = styled.div`
     }
   }
 `;
-const CharacterDataTilte = styled.dt`
+const CharacterDataTitle = styled.dt`
   text-transform: uppercase;
   font: 26px/ 35px bold;
   display: block;
@@ -147,6 +147,7 @@ const Table = styled.div`
 
   .column__items {
     display: grid;
+    /* justify-items: end; */
     grid-template-columns: repeat(9, 1fr);
     margin: 5px 0;
   }
