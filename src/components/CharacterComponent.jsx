@@ -22,7 +22,7 @@ const CharacterWrapper = styled.div`
   }
 `;
 
-const CharacterrHeader = styled.div`
+const CharacterHeader = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
@@ -99,7 +99,9 @@ const Table = styled.div`
 
   .column__items {
     display: grid;
+    /* text-align: end; */
     /* justify-items: end; */
+    /* justify-content: space-around; */
     grid-template-columns: repeat(9, 1fr);
     margin: 5px 0;
   }
@@ -129,7 +131,7 @@ const Bar = styled.div`
 export default function Charactercomponent() {
   return (
     <CharacterWrapper>
-      <CharacterrHeader>
+      <CharacterHeader>
         <CharacterAvatar>
           <img src={CharacterImg} alt="foto van Kim" />
         </CharacterAvatar>
@@ -139,7 +141,7 @@ export default function Charactercomponent() {
             <CharacterDataData>Frontend Developer @FIOD</CharacterDataData>
           </dl>
         </CharacterHeadline>
-      </CharacterrHeader>
+      </CharacterHeader>
 
       <CharacterTable>
         <Table>
@@ -165,9 +167,9 @@ export default function Charactercomponent() {
               <div>150%</div>
               <div>175%</div>
               <div>200%</div>
-              <Bar scoreBar="1/ 10">200%</Bar>
-              <Bar scoreBar="1/ 1 ">50%</Bar>
-              <Bar scoreBar="1/1">test</Bar>
+              <Bar scoreBar="1/10">200%</Bar>
+              <Bar scoreBar="1/4">50%</Bar>
+              <Bar scoreBar="1/2">test</Bar>
             </div>
           </div>
         </Table>
