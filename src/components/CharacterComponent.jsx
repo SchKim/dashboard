@@ -3,6 +3,15 @@ import styled from "styled-components";
 
 import CharacterImg from "../shared/assets/fotoKim.jpeg";
 
+let scoreBar = "";
+let percentage = scoreBar;
+
+function getProgressInColumns(percentage) {
+  return 2 + percentage / 10;
+}
+
+getProgressInColumns(percentage);
+
 const CharacterWrapper = styled.div`
   position: absolute;
   left: 40px;
@@ -125,7 +134,7 @@ const Bar = styled.div`
   font-size: 10px;
   line-height: 17px;
   padding-right: 2px;
-  grid-column: ${(props) => props.scoreBar || "0"};
+  grid-column: ${(props) => `1 / ${getProgressInColumns(props.scoreBar)}`};
 `;
 
 export default function Charactercomponent() {
@@ -158,18 +167,21 @@ export default function Charactercomponent() {
 
           <div className="table__column">
             <div className="column__items">
+              <div></div>
               <div>0%</div>
-              <div>25%</div>
+              <div>10%</div>
+              <div>20%</div>
+              <div>30%</div>
+              <div>40%</div>
               <div>50%</div>
-              <div>75%</div>
+              <div>60%</div>
+              <div>70%</div>
               <div>100%</div>
-              <div>125%</div>
-              <div>150%</div>
-              <div>175%</div>
-              <div>200%</div>
-              <Bar scoreBar="1/10">200%</Bar>
-              <Bar scoreBar="1/4">50%</Bar>
-              <Bar scoreBar="1/2">test</Bar>
+              <Bar scoreBar="100">100%</Bar>
+              <Bar scoreBar="50">50%</Bar>
+              <Bar scoreBar="20">20%</Bar>
+              <Bar scoreBar="10">10%</Bar>
+              <Bar scoreBar="70">70%</Bar>
             </div>
           </div>
         </Table>
