@@ -3,14 +3,9 @@ import styled from "styled-components";
 
 import CharacterImg from "../shared/assets/fotoKim.jpeg";
 
-let scoreBar = "";
-let percentage = scoreBar;
-
 function getProgressInColumns(percentage) {
-  return 2 + percentage / 10;
+  return 1 + percentage / 10;
 }
-
-getProgressInColumns(percentage);
 
 const CharacterWrapper = styled.div`
   position: absolute;
@@ -23,11 +18,18 @@ const CharacterWrapper = styled.div`
   max-width: 1000px;
   width: 50%;
 
+  @media only screen and (max-width: 1600px) {
+    width: 90%;
+  }
+
   @media only screen and (max-width: 900px) {
     width: 70%;
     left: 7%;
-
     top: 20px;
+  }
+  @media only screen and (max-width: 500px) {
+    width: 100%;
+    left: 0;
   }
 `;
 
@@ -108,9 +110,6 @@ const Table = styled.div`
 
   .column__items {
     display: grid;
-    /* text-align: end; */
-    /* justify-items: end; */
-    /* justify-content: space-around; */
     grid-template-columns: repeat(9, 1fr);
     margin: 5px 0;
   }
@@ -135,6 +134,9 @@ const Bar = styled.div`
   line-height: 17px;
   padding-right: 2px;
   grid-column: ${(props) => `1 / ${getProgressInColumns(props.scoreBar)}`};
+  &:after {
+    content: " ${(props) => props.scoreBar} %";
+  }
 `;
 
 export default function Charactercomponent() {
@@ -167,8 +169,6 @@ export default function Charactercomponent() {
 
           <div className="table__column">
             <div className="column__items">
-              <div></div>
-              <div>0%</div>
               <div>10%</div>
               <div>20%</div>
               <div>30%</div>
@@ -176,12 +176,14 @@ export default function Charactercomponent() {
               <div>50%</div>
               <div>60%</div>
               <div>70%</div>
+              <div>80%</div>
+              <div>90%</div>
               <div>100%</div>
-              <Bar scoreBar="100">100%</Bar>
-              <Bar scoreBar="50">50%</Bar>
-              <Bar scoreBar="20">20%</Bar>
-              <Bar scoreBar="10">10%</Bar>
-              <Bar scoreBar="70">70%</Bar>
+              <Bar scoreBar="100"></Bar>
+              <Bar scoreBar="50"></Bar>
+              <Bar scoreBar="20"></Bar>
+              <Bar scoreBar="10"></Bar>
+              <Bar scoreBar="70"></Bar>
             </div>
           </div>
         </Table>
