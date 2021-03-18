@@ -4,7 +4,8 @@ import styled from "styled-components";
 import CharacterImg from "../shared/assets/fotoKim.jpeg";
 
 function getProgressInColumns(percentage) {
-  return 1 + percentage / 10;
+  return 2 + percentage / 10;
+  // de + 1 is nodig om de de grid onder het juiste percetage te zetten anders tikt die er tegen aan
 }
 
 const CharacterWrapper = styled.div`
@@ -92,7 +93,6 @@ const Table = styled.div`
   color: #02132c;
   text-transform: uppercase;
   padding: 5% 8%;
-  height: 30vh;
 
   .table__row {
     grid-row: 1;
@@ -104,13 +104,13 @@ const Table = styled.div`
 
   .row__items {
     display: grid;
-    grid-template-rows: repeat(11, 25px);
+    grid-template-rows: repeat(auto-fill, 25px);
     margin: 6px 0 0 0;
   }
 
   .column__items {
     display: grid;
-    grid-template-columns: repeat(9, 1fr);
+    grid-template-columns: repeat(11, 1fr);
     margin: 5px 0;
   }
 
@@ -133,7 +133,8 @@ const Bar = styled.div`
   font-size: 10px;
   line-height: 17px;
   padding-right: 2px;
-  grid-column: ${(props) => `1 / ${getProgressInColumns(props.scoreBar)}`};
+  grid-column-start: 1;
+  grid-column-end: ${(props) => getProgressInColumns(props.scoreBar)};
   &:after {
     content: " ${(props) => props.scoreBar} %";
   }
@@ -169,6 +170,7 @@ export default function Charactercomponent() {
 
           <div className="table__column">
             <div className="column__items">
+              <div>0%</div>
               <div>10%</div>
               <div>20%</div>
               <div>30%</div>
@@ -179,11 +181,10 @@ export default function Charactercomponent() {
               <div>80%</div>
               <div>90%</div>
               <div>100%</div>
-              <Bar scoreBar="100"></Bar>
-              <Bar scoreBar="50"></Bar>
-              <Bar scoreBar="20"></Bar>
-              <Bar scoreBar="10"></Bar>
-              <Bar scoreBar="70"></Bar>
+              <Bar scoreBar={100} />
+              <Bar scoreBar={50} />
+              <Bar scoreBar={20} />
+              <Bar scoreBar={0} />
             </div>
           </div>
         </Table>
