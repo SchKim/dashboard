@@ -16,7 +16,7 @@ function getProgressInColumns(percentage) {
   //   console.log("floor" + total);
   // }
 
-  console.log("uitkomst" + total);
+  // console.log("uitkomst" + total);
   return total + 2;
 
   // de +2 is om het grid in juiste positie te zetten default start 1, 10% = 1 + 2 tikt die tegen het 3de grid aan
