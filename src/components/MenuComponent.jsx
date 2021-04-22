@@ -10,17 +10,12 @@ import HistoryComponent from "./HistoryComponent";
 
 const Menu = styled.nav`
   background: #f97970;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  right: 0;
 
   ul {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     place-items: end center;
     padding-inline-start: 0px;
-    position: relative;
   }
   li {
     list-style-type: none;
@@ -28,11 +23,11 @@ const Menu = styled.nav`
   ul li a {
     color: #f97970;
     font-size: 24px;
+    position: relative;
   }
 
   li a > i {
     font-size: 45px;
-
     color: #fbefd7;
     width: 100%;
     max-height: 100%;
@@ -51,8 +46,8 @@ const Menu = styled.nav`
 `;
 const Tooltip = styled.div`
   position: absolute;
+  margin-left: 50%;
   bottom: 100%;
-  /* margin: 50%; */
   background: #fff;
   padding: 10px;
   border-radius: 50px;
@@ -61,7 +56,7 @@ const Tooltip = styled.div`
   letter-spacing: 3px;
   font-weight: bold;
   display: none;
-  transform: translate(-40%, -100%);
+  transform: translate(-50%, -100%);
 `;
 
 export default function MenuComponent() {
@@ -97,6 +92,10 @@ export default function MenuComponent() {
             <Link to="/history">
               <i className="fa fa-history"></i>
               <Tooltip>History</Tooltip>
+              {/* a ten opzicten vn die (a relaie maken ) tn opzichten daar van gaan werken  */}
+              {/* doelstellingen bijwerken  exel */}
+              {/* TO doo in code en opschrijven waar je was en wat je deed  */}
+              {/* maandag code acemedy  */}
             </Link>
           </li>
         </ul>

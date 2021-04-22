@@ -4,8 +4,22 @@ import styled from "styled-components";
 import CharacterImg from "../shared/assets/fotoKim.jpeg";
 
 function getProgressInColumns(percentage) {
-  return 2 + percentage / 10;
-  // de + 1 is nodig om de de grid onder het juiste percetage te zetten anders tikt die er tegen aan
+  // 200 delen door 10 is 0.5 welke moet afgerond worden naar boven voor een heel getal
+  let total = percentage / 10;
+  //console.log(total);
+  total = Math.round(total);
+  // if (total <= 0.5) {
+  //   Math.ceil("ceil" + total);
+  //   console.log(total);
+  // } else {
+  //   Math.floor(total);
+  //   console.log("floor" + total);
+  // }
+
+  console.log("uitkomst" + total);
+  return total + 2;
+
+  // de +2 is om het grid in juiste positie te zetten default start 1, 10% = 1 + 2 tikt die tegen het 3de grid aan
 }
 
 const CharacterWrapper = styled.div`
@@ -102,12 +116,6 @@ const Table = styled.div`
     grid-row: 1;
   }
 
-  .row__items {
-    display: grid;
-    grid-template-rows: repeat(auto-fill, 25px);
-    margin: 6px 0 0 0;
-  }
-
   .column__items {
     display: grid;
     grid-template-columns: repeat(11, 1fr);
@@ -115,8 +123,7 @@ const Table = styled.div`
   }
 
   @media only screen and (max-width: 1100px) {
-    grid-template-columns: 50px 1fr;
-    font-size: small;
+    grid-template-columns: 100px 1fr;
   }
   @media only screen and (max-width: 900px) {
     font-size: 8px;
@@ -125,6 +132,19 @@ const Table = styled.div`
     font-size: 8px;
   }
 `;
+const RowItems = styled.div`
+  display: grid;
+  grid-template-rows: repeat(auto-fill, 25px);
+
+  @media only screen and (max-width: 900px) {
+    /* grid-template-rows: repeat(6, 25px); */
+    line-height: 10px;
+  }
+`;
+const RowItem = styled.div`
+  margin: 6px 0 0 0;
+`;
+
 const Bar = styled.div`
   border-radius: 50px;
   background-color: #fff;
@@ -137,6 +157,12 @@ const Bar = styled.div`
   grid-column-end: ${(props) => getProgressInColumns(props.scoreBar)};
   &:after {
     content: " ${(props) => props.scoreBar} %";
+  }
+  @media only screen and (max-width: 900px) {
+    line-height: 12px;
+  }
+  @media only screen and (max-width: 600px) {
+    font-size: 8px;
   }
 `;
 
@@ -158,14 +184,14 @@ export default function Charactercomponent() {
       <CharacterTable>
         <Table>
           <div className="table__row">
-            <div className="row__items">
-              <div>skills</div>
-              <div>kim</div>
-              <div>html</div>
-              <div>css</div>
-              <div>javascript</div>
-              <div>typescript</div>
-            </div>
+            <RowItems>
+              <RowItem>skills</RowItem>
+              <RowItem>kim</RowItem>
+              <RowItem>html</RowItem>
+              <RowItem>css</RowItem>
+              <RowItem>javascript</RowItem>
+              <RowItem>typescript</RowItem>
+            </RowItems>
           </div>
 
           <div className="table__column">
@@ -182,9 +208,9 @@ export default function Charactercomponent() {
               <div>90%</div>
               <div>100%</div>
               <Bar scoreBar={100} />
-              <Bar scoreBar={50} />
+              <Bar scoreBar={55} />
               <Bar scoreBar={20} />
-              <Bar scoreBar={0} />
+              <Bar scoreBar={10} />
             </div>
           </div>
         </Table>
