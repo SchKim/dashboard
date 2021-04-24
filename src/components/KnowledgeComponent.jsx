@@ -1,7 +1,16 @@
 import React from "react";
-import styled from "styled-components";
 import CharacterJson from "../shared/api.json";
-import { FaGlasses } from "react-icons/fa";
+import {
+  FaAddressCard,
+  FaVenus,
+  FaUsers,
+  FaCode,
+  FaUserCog,
+  FaGasPump,
+  FaGlasses,
+  FaSignature,
+  FaSmile,
+} from "react-icons/fa";
 
 import {
   KnowledgeWrapper,
@@ -11,6 +20,7 @@ import {
   KnowledgeRevealer,
   KnowledgeTextWrapper,
 } from "./styles/styles";
+
 function clickHandlerKarakter(id) {}
 
 export default function KnowledgeComponent() {
@@ -20,7 +30,7 @@ export default function KnowledgeComponent() {
         {CharacterJson.map((knowledge) => (
           <div key={knowledge.id}>
             <button onClick={clickHandlerKarakter(knowledge.id)}>
-              <KnowledgeIcon>{knowledge.symbol}</KnowledgeIcon>
+              <KnowledgeIcon>{`< ${knowledge.symbol}/>`} </KnowledgeIcon>
             </button>
             <KnowledgeRevealer>
               <KnowledgeTitle>{knowledge.title}</KnowledgeTitle>

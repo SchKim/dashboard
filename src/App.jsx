@@ -5,7 +5,7 @@ import MenuComponent from "./components/MenuComponent";
 
 const ContentWrapper = styled.div`
   display: grid;
-  grid-template-rows: calc(100vh + -104px);
+  grid-template-rows: calc(100vh + -84px);
 `;
 
 const CoverBackgroundImage = styled.img`

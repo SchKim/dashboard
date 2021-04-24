@@ -8,6 +8,14 @@ import AchievementsComponent from "./AchievementsComponent";
 import QuestsComponent from "./QuestsComponent";
 import HistoryComponent from "./HistoryComponent";
 
+import {
+  FaHistory,
+  FaQuestionCircle,
+  FaTrophy,
+  FaGraduationCap,
+  FaFemale,
+} from "react-icons/fa";
+
 const Menu = styled.nav`
   background: #f97970;
 
@@ -66,36 +74,45 @@ export default function MenuComponent() {
         <ul>
           <li>
             <Link to="/character">
-              <i className="fa fa-female"></i>
+              <i>
+                <FaFemale />
+              </i>
               <Tooltip>Karakter</Tooltip>
             </Link>
           </li>
           <li>
             <Link to="/knowledge">
-               <i className="fa fa-graduation-cap"></i>
+               
+              <i>
+                <FaGraduationCap />
+              </i>
               <Tooltip>Knowledge Book</Tooltip>
             </Link>
           </li>
           <li>
             <Link to="/achievement">
-               <i className="fa fa-trophy"></i>
+               
+              <i>
+                <FaTrophy />
+              </i>
               <Tooltip>Achievements</Tooltip>
             </Link>
           </li>
           <li>
             <Link to="/quests">
-               <i className="fa fa-question"></i>
+               
+              <i>
+                <FaQuestionCircle />
+              </i>
               <Tooltip>Quests</Tooltip>
             </Link>
           </li>
           <li className="menu__last-item">
             <Link to="/history">
-              <i className="fa fa-history"></i>
+              <i>
+                <FaHistory />
+              </i>
               <Tooltip>History</Tooltip>
-              {/* a ten opzicten vn die (a relaie maken ) tn opzichten daar van gaan werken  */}
-              {/* doelstellingen bijwerken  exel */}
-              {/* TO doo in code en opschrijven waar je was en wat je deed  */}
-              {/* maandag code acemedy  */}
             </Link>
           </li>
         </ul>
@@ -105,6 +122,8 @@ export default function MenuComponent() {
       <Route path="/achievement" component={AchievementsComponent} />
       <Route path="/quests" component={QuestsComponent} />
       <Route path="/history" component={HistoryComponent} />
+
+      {/* apar route component  */}
     </Router>
   );
 }
