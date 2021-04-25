@@ -15,65 +15,66 @@ import {
 import {
   KnowledgeWrapper,
   KnowledgeDiv,
-  KnowledgeTitle,
+  // KnowledgeTitle,
   KnowledgeIcon,
   KnowledgeTextWrapper,
 } from "./styles/styles";
-let timer = 0;
-// waarom doet dit het hahahah
+import { text } from "@fortawesome/fontawesome-svg-core";
 
-const textDiv = KnowledgeTextWrapper;
+//function clickHandlerKarakter(text) {
+// const gesplitteText = text.split("");
+//nieuwe iets  += gesplitteText.shift();
+//}
+// function stopTimer() {
+//   clearTimeout(timer);
+// }
+//klaar {stopTimer(timer);
+//     return false;}
+//timer = setTimeout(function () {
+//     clickHandlerKarakter(text);
+//   }, 70);
 
-function loopText(charArray, textContainer) {
-  if (!charArray) return;
-  stopTimer();
-  if (charArray.length > 0) {
-    textContainer.innerHTML += charArray.shift();
-  } else {
-    console.log(timer);
-    stopTimer(timer);
-    return false;
-  }
-  timer = setTimeout(function () {
-    loopText(charArray, textContainer);
-  }, 70);
-}
-
-function stopTimer() {
-  clearTimeout(timer);
-}
-
-function clickHandlerKarakter(text, textDiv) {
-  stopTimer(timer);
-  textDiv.innerHTML = "";
-  const gesplitteText = text.split("");
-  loopText(gesplitteText, textDiv);
-}
+// function looptext(text) {
+//   const splittedText = text.split("");
+//   let kip = splittedText.shift();
+//   console.log(kip);
+//   console.log(splittedText);
+//   return text;
+// }
 
 export default function KnowledgeComponent() {
+  const [description, setDescription] = React.useState("");
+
+  function loopText() {
+    let newText = "";
+
+    for (let index = 0; index < description.length; index++) {
+      setTimeout(() => {
+        newText += description.charAt(index);
+        return newText;
+      }, 1000);
+    }
+  }
+
   return (
     <KnowledgeWrapper>
       <KnowledgeDiv>
         {CharacterJson.map((knowledge) => (
           <div key={knowledge.id}>
-            <button
-              onClick={clickHandlerKarakter(knowledge.description, textDiv)}
-            >
-              <KnowledgeIcon>{bla(knowledge.symbol)}</KnowledgeIcon>
+            <button onClick={() => setDescription(knowledge.description)}>
+              <KnowledgeIcon>{getIcon(knowledge.symbol)}</KnowledgeIcon>
             </button>
             {/* <KnowledgeTitle>{knowledge.title}</KnowledgeTitle>
             <p>{knowledge.description}</p> */}
           </div>
         ))}
       </KnowledgeDiv>
-      <KnowledgeTextWrapper>
-        hier komt de text <FaGlasses />
-      </KnowledgeTextWrapper>
+      <KnowledgeTextWrapper>{description}</KnowledgeTextWrapper>
     </KnowledgeWrapper>
   );
 }
 
-function bla(symbol) {
+function getIcon(symbol) {
   let item = "";
 
   switch (symbol) {
@@ -119,5 +120,3 @@ function bla(symbol) {
   }
   return item;
 }
-
-// react FONTAwesome
