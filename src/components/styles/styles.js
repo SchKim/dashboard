@@ -48,10 +48,6 @@ export const KnowledgeIcon = styled.i`
   color: #f97970;
 `;
 
-export const KnowledgeRevealer = styled.div`
-  display: none;
-`;
-
 export const KnowledgeTextWrapper = styled.div`
   max-width: 80%;
   padding: 10%;

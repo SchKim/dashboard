@@ -21,13 +21,13 @@
     "id": 4,
     "title": "Development stack",
     "description": "Ik ben een enthousiast aan het ontwikkelen met HTML, CSS, JS, TS, React en Styled components ",
-    "symbol": "BsCodeSlash"
+    "symbol": "FaCode"
   },
   {
     "id": 5,
     "title": "Ambities",
     "description": "Mijn ambitie is om een goede senior Front-end developer te worden die het team CoDE goed kan begeleiden en ondersteunen op alle fronten ",
-    "symbol": "RiUserStarFill"
+    "symbol": "FaUserCog"
   },
   {
     "id": 6,
@@ -51,6 +51,6 @@
     "id": 9,
     "title": "Specialties",
     "description": "Ja dat vind ik altijd een beetje lastig om over mijzelf te zeggen. Mijn dochter vind mij de liefste Mama, dat is ook mijn grootste specialiteit. Mensen blijven graag eten als ik kook. Ben goed in het organiseren van dingen. ",
-    "symbol": "BiWinkSmile"
+    "symbol": "FaSmile"
   }
 ]

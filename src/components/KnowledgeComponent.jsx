@@ -17,11 +17,38 @@ import {
   KnowledgeDiv,
   KnowledgeTitle,
   KnowledgeIcon,
-  KnowledgeRevealer,
   KnowledgeTextWrapper,
 } from "./styles/styles";
+let timer = 0;
+// waarom doet dit het hahahah
 
-function clickHandlerKarakter(id) {}
+const textDiv = KnowledgeTextWrapper;
+
+function loopText(charArray, textContainer) {
+  if (!charArray) return;
+  stopTimer();
+  if (charArray.length > 0) {
+    textContainer.innerHTML += charArray.shift();
+  } else {
+    console.log(timer);
+    stopTimer(timer);
+    return false;
+  }
+  timer = setTimeout(function () {
+    loopText(charArray, textContainer);
+  }, 70);
+}
+
+function stopTimer() {
+  clearTimeout(timer);
+}
+
+function clickHandlerKarakter(text, textDiv) {
+  stopTimer(timer);
+  textDiv.innerHTML = "";
+  const gesplitteText = text.split("");
+  loopText(gesplitteText, textDiv);
+}
 
 export default function KnowledgeComponent() {
   return (
@@ -29,13 +56,13 @@ export default function KnowledgeComponent() {
       <KnowledgeDiv>
         {CharacterJson.map((knowledge) => (
           <div key={knowledge.id}>
-            <button onClick={clickHandlerKarakter(knowledge.id)}>
-              <KnowledgeIcon>{`< ${knowledge.symbol}/>`} </KnowledgeIcon>
+            <button
+              onClick={clickHandlerKarakter(knowledge.description, textDiv)}
+            >
+              <KnowledgeIcon>{bla(knowledge.symbol)}</KnowledgeIcon>
             </button>
-            <KnowledgeRevealer>
-              <KnowledgeTitle>{knowledge.title}</KnowledgeTitle>
-              <p>{knowledge.description}</p>
-            </KnowledgeRevealer>
+            {/* <KnowledgeTitle>{knowledge.title}</KnowledgeTitle>
+            <p>{knowledge.description}</p> */}
           </div>
         ))}
       </KnowledgeDiv>
@@ -44,6 +71,53 @@ export default function KnowledgeComponent() {
       </KnowledgeTextWrapper>
     </KnowledgeWrapper>
   );
+}
+
+function bla(symbol) {
+  let item = "";
+
+  switch (symbol) {
+    case "FaAddressCard":
+      item = <FaAddressCard />;
+      break;
+
+    case "FaVenus":
+      item = <FaVenus />;
+      break;
+
+    case "FaUsers":
+      item = <FaUsers />;
+      break;
+
+    case "FaCode":
+      item = <FaCode />;
+      break;
+
+    case "FaUserCog":
+      item = <FaUserCog />;
+      break;
+
+    case "FaGasPump":
+      item = <FaGasPump />;
+      break;
+
+    case "FaGlasses":
+      item = <FaGlasses />;
+      break;
+
+    case "FaSignature":
+      item = <FaSignature />;
+      break;
+
+    case "FaSmile":
+      item = <FaSmile />;
+      break;
+
+    default:
+      item = <FaSmile />;
+      break;
+  }
+  return item;
 }
 
 // react FONTAwesome
