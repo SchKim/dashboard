@@ -19,42 +19,21 @@ import {
   KnowledgeIcon,
   KnowledgeTextWrapper,
 } from "./styles/styles";
-import { text } from "@fortawesome/fontawesome-svg-core";
-
-//function clickHandlerKarakter(text) {
-// const gesplitteText = text.split("");
-//nieuwe iets  += gesplitteText.shift();
-//}
-// function stopTimer() {
-//   clearTimeout(timer);
-// }
-//klaar {stopTimer(timer);
-//     return false;}
-//timer = setTimeout(function () {
-//     clickHandlerKarakter(text);
-//   }, 70);
-
-// function looptext(text) {
-//   const splittedText = text.split("");
-//   let kip = splittedText.shift();
-//   console.log(kip);
-//   console.log(splittedText);
-//   return text;
-// }
 
 export default function KnowledgeComponent() {
   const [description, setDescription] = React.useState("");
 
-  function loopText() {
-    let newText = "";
-
-    for (let index = 0; index < description.length; index++) {
-      setTimeout(() => {
-        newText += description.charAt(index);
-        return newText;
-      }, 1000);
-    }
+  function loopText(setDescription) {
+    const gesplitteText = description.split("");
+    console.log(gesplitteText);
   }
+
+  // for (let index = 0; index < description.length; index++) {
+  //   setTimeout(() => {
+  //     newText += description.charAt(index);
+  //     return newText;
+  //   }, 1000);
+  // }
 
   return (
     <KnowledgeWrapper>
@@ -69,7 +48,7 @@ export default function KnowledgeComponent() {
           </div>
         ))}
       </KnowledgeDiv>
-      <KnowledgeTextWrapper>{description}</KnowledgeTextWrapper>
+      <KnowledgeTextWrapper>{loopText(description)}</KnowledgeTextWrapper>
     </KnowledgeWrapper>
   );
 }
