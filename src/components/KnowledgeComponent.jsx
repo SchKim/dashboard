@@ -22,17 +22,30 @@ import {
 
 export default function KnowledgeComponent() {
   const [description, setDescription] = React.useState("");
+  //let timer = 0;
 
-  function loopText(setDescription) {
-    const gesplitteText = description.split("");
-    console.log(gesplitteText);
-  }
+  // function loopText(setDescription) {
+  //   const gesplitteText = description.split("");
+  //   //console.log(gesplitteText);
 
-  // for (let index = 0; index < description.length; index++) {
-  //   setTimeout(() => {
-  //     newText += description.charAt(index);
-  //     return newText;
-  //   }, 1000);
+  //   if (!setDescription) return;
+  //   stopTimer();
+
+  //   if (gesplitteText.length > 0) {
+  //     let kip = gesplitteText.shift();
+  //     let ei = (kip += kip);
+  //     console.log(ei);
+  //   } else {
+  //     console.log(timer);
+  //     stopTimer(timer);
+  //     return false;
+  //   }
+  //   timer = setTimeout(function () {
+  //     loopText(setDescription);
+  //   }, 70);
+  // }
+  // function stopTimer() {
+  //   clearTimeout(timer);
   // }
 
   return (
@@ -43,12 +56,11 @@ export default function KnowledgeComponent() {
             <button onClick={() => setDescription(knowledge.description)}>
               <KnowledgeIcon>{getIcon(knowledge.symbol)}</KnowledgeIcon>
             </button>
-            {/* <KnowledgeTitle>{knowledge.title}</KnowledgeTitle>
-            <p>{knowledge.description}</p> */}
           </div>
         ))}
       </KnowledgeDiv>
-      <KnowledgeTextWrapper>{loopText(description)}</KnowledgeTextWrapper>
+      {/* <KnowledgeTextWrapper>{loopText(description)}</KnowledgeTextWrapper> */}
+      <KnowledgeTextWrapper>{description}</KnowledgeTextWrapper>
     </KnowledgeWrapper>
   );
 }
