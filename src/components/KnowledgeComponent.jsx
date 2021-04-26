@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import Typing from "react-typing-animation";
 import CharacterJson from "../shared/api.json";
 import {
   FaAddressCard,
@@ -15,38 +16,15 @@ import {
 import {
   KnowledgeWrapper,
   KnowledgeDiv,
-  // KnowledgeTitle,
   KnowledgeIcon,
   KnowledgeTextWrapper,
 } from "./styles/styles";
 
 export default function KnowledgeComponent() {
-  const [description, setDescription] = React.useState("");
-  //let timer = 0;
+  const [description, setDescription] = useState("");
 
-  // function loopText(setDescription) {
-  //   const gesplitteText = description.split("");
-  //   //console.log(gesplitteText);
 
-  //   if (!setDescription) return;
-  //   stopTimer();
-
-  //   if (gesplitteText.length > 0) {
-  //     let kip = gesplitteText.shift();
-  //     let ei = (kip += kip);
-  //     console.log(ei);
-  //   } else {
-  //     console.log(timer);
-  //     stopTimer(timer);
-  //     return false;
-  //   }
-  //   timer = setTimeout(function () {
-  //     loopText(setDescription);
-  //   }, 70);
-  // }
-  // function stopTimer() {
-  //   clearTimeout(timer);
-  // }
+  use effe dependencie description
 
   return (
     <KnowledgeWrapper>
@@ -59,8 +37,12 @@ export default function KnowledgeComponent() {
           </div>
         ))}
       </KnowledgeDiv>
-      {/* <KnowledgeTextWrapper>{loopText(description)}</KnowledgeTextWrapper> */}
-      <KnowledgeTextWrapper>{description}</KnowledgeTextWrapper>
+
+      {description && (
+        <KnowledgeTextWrapper>
+          <Typing>{description}</Typing>
+        </KnowledgeTextWrapper>
+      )}
     </KnowledgeWrapper>
   );
 }
