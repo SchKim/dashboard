@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Typing from "react-typing-animation";
 import CharacterJson from "../shared/api.json";
 import {
@@ -23,8 +23,18 @@ import {
 export default function KnowledgeComponent() {
   const [description, setDescription] = useState("");
 
+  //probleem : discription word geladen.. en typing ... maar blijft lopen en plakt alles aan elkaar vast
+  // als ik op een btn click wil ik dat die stopt en verder gaat met een ander
 
-  use effe dependencie description
+  // use effe dependencie description
+
+  useEffect(() => {
+    console.log("is veranderd");
+    const test = description;
+    setDescription("");
+    console.log(test);
+    //setDescription();
+  }, []);
 
   return (
     <KnowledgeWrapper>
